@@ -14,10 +14,12 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+
 
 
 public class RbmSuggestedModule extends ReactContextBaseJavaModule {
@@ -65,41 +67,37 @@ public class RbmSuggestedModule extends ReactContextBaseJavaModule {
     }
 
     private void initMatrix() {
-        // weights Matrix
-        double[] weightsArray = this.matrixValuesFrom("assets/weights_v5.txt");
-        double[][] weightsMatrixData = {weightsArray, {}};
-        SimpleMatrix weightsMatrix = new SimpleMatrix(weightsMatrixData);
+        // weights matrix
+        double[] weightsArray = this.matrixValuesFrom("weights_v5.txt");
+        SimpleMatrix weightsMatrix = new SimpleMatrix(weightsArray.length,1, false, weightsArray);
         weightsMatrix.reshape(130, 459);
         this.mMatrixWeights = weightsMatrix;
 
         // intercept hidden
-        double[] interceptsHiddenArray = this.matrixValuesFrom("assets/intercept_hidden_v5.txt");
-        double[][] interceptsHiddenMatrixData = {interceptsHiddenArray, {}};
-        SimpleMatrix interceptsHiddenMatrix = new SimpleMatrix(interceptsHiddenMatrixData);
-        interceptsHiddenMatrix.reshape(130, 1);
-        this.mInterceptsHidden = interceptsHiddenMatrix;
+        double[] interceptsHiddenArray = this.matrixValuesFrom("intercept_hidden_v5.txt");
+        this.mInterceptsHidden = new SimpleMatrix(130, 1, false, interceptsHiddenArray);
 
         // intercept visible
-        double[] interceptsVisibleArray = this.matrixValuesFrom("assets/intercept_visible_v5.txt");
-        double[][] interceptsVisibleMatrixData = {interceptsVisibleArray, {}};
-        SimpleMatrix interceptsVisibleMatrix = new SimpleMatrix(interceptsVisibleMatrixData);
-        interceptsVisibleMatrix.reshape(130, 1);
-        this.mInterceptsVisible = interceptsVisibleMatrix;
+        double[] interceptsVisibleArray = this.matrixValuesFrom("intercept_visible_v5.txt");
+        this.mInterceptsVisible = new SimpleMatrix(130, 1, false, interceptsVisibleArray);
     }
 
-    private double[] matrixValuesFrom(String path) {
-        File file = new File(path);
+    private double[] matrixValuesFrom(String filename) {
         BufferedReader bufferedReader = null;
         ArrayList<String> matrixValuesArrayList = new ArrayList<>();
 
         try {
-            bufferedReader = new BufferedReader(new FileReader(file));
-            String line = bufferedReader.readLine();
-            matrixValuesArrayList.add(line);
-            Log.d("debug",line);
+            // FIXME: getAssets() won't work?
+            bufferedReader = new BufferedReader(new InputStreamReader(getAssets().open(filename), "UTF-8"));
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                matrixValuesArrayList.add(line);
+                // Log.i("RbmSuggestedModule",line);
+            }
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
+        }
+        finally {
             try {
                 if (bufferedReader != null) {
                     bufferedReader.close();
@@ -109,7 +107,14 @@ public class RbmSuggestedModule extends ReactContextBaseJavaModule {
             }
         }
 
-        return new double[matrixValuesArrayList.size()];
+        double[] array = new double[matrixValuesArrayList.size()];
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = Double.parseDouble(matrixValuesArrayList.get(i));
+        }
+
+
+        return array;
     }
 
     private SimpleMatrix createInputVector(ArrayList<Integer> foodItemsIds, int hour, String timezone) {

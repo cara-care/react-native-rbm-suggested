@@ -16,7 +16,7 @@ public class Constants {
         put("America/Vancouver", 457);
         put("America/Detroit", 458);
     }};
-    static public final int[] FOOD_IDS_FEATURES_ORDERED = {
+    static public final Integer[] FOOD_IDS_FEATURES_ORDERED = {
                 2999,
                 2997,
                 3000,

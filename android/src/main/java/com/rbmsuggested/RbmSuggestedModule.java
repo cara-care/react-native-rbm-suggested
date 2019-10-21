@@ -65,20 +65,11 @@ public class RbmSuggestedModule extends ReactContextBaseJavaModule {
             foodItemsIdsArrayList.add(foodItemsIds.getInt(i));
         }
 
-        // FIXME: This is dumb, perhaps should refactor createInputVector to use ArrayList<Integer>
-        int[] foodItemIds = new int[foodItemsIdsArrayList.size()];
-
-        for (int i = 0; i < foodItemsIdsArrayList.size(); i++) {
-            foodItemIds[i] = foodItemsIdsArrayList.get(i);
-        }
-
-        SimpleMatrix inputVector = this.createInputVector(foodItemIds, hour, timezone);
+        SimpleMatrix inputVector = this.createInputVector(foodItemsIdsArrayList, hour, timezone);
         // TODO: figure out which set to use / more efficient way of doing this
         Set<Integer> setValues = new HashSet<Integer>() {};
         // foodItemIds
-        for (int i = 0; i < foodItemIds.length; i++) {
-            setValues.add(foodItemIds[i]);
-        }
+        setValues.addAll(foodItemsIdsArrayList);
         // alcoholIds
         for (int i = 0; i < this.alcoholIds.length; i++) {
             setValues.add(this.alcoholIds[i]);
@@ -244,12 +235,13 @@ public class RbmSuggestedModule extends ReactContextBaseJavaModule {
     }
 
 
-    private SimpleMatrix createInputVector(int[] foodItemsIds, int hour, String timezone) {
+    private SimpleMatrix createInputVector(ArrayList<Integer> foodItemsIds, int hour, String timezone) {
         double[] values = new double[459];
         int foodOffset = 425;
 
-        for (int i = 0; i < foodItemsIds.length; i++) {
-            int index = Arrays.binarySearch(Constants.FOOD_IDS_FEATURES_ORDERED, foodItemsIds[i]);
+        for (int i = 0; i < foodItemsIds.size(); i++) {
+            int id = foodItemsIds.get(i);
+            int index = Arrays.asList(Constants.FOOD_IDS_FEATURES_ORDERED).indexOf(id);
             if (index != -1) {
                 values[i] = 1;
             }

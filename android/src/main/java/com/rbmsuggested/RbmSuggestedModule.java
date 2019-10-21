@@ -243,7 +243,8 @@ public class RbmSuggestedModule extends ReactContextBaseJavaModule {
             int id = foodItemsIds.get(i);
             int index = Arrays.asList(Constants.FOOD_IDS_FEATURES_ORDERED).indexOf(id);
             if (index != -1) {
-                values[i] = 1;
+
+                values[index] = 1;
             }
         }
 

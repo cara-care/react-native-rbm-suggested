@@ -7,6 +7,7 @@ public class Constants {
     private Constants() {}
     static public final Map<String, Integer> TIMEZONES_FEATURES_ORDERED = new HashMap<String, Integer>(){{
         put("America/New_York", 449);
+        put("America/Los_Angeles", 450);
         put("America/Chicago", 451);
         put("Europe/London", 452);
         put("Europe/Berlin", 453);

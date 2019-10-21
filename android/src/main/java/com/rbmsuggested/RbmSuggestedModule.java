@@ -1,4 +1,4 @@
-package com.reactlibrary;
+package com.rbmsuggested;
 
 import android.util.Log;
 

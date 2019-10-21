@@ -1,4 +1,4 @@
-package com.reactlibrary;
+package com.rbmsuggested;
 
 import java.util.HashMap;
 import java.util.Map;

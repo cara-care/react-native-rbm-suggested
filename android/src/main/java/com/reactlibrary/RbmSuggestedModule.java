@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -153,7 +154,7 @@ public class RbmSuggestedModule extends ReactContextBaseJavaModule {
             iterator.set(1.0 / (1.0 + Math.exp(-x)));
         }
 
-        return inputVector;
+        return probabilities;
     }
 
     private SimpleMatrix visibleStateToHiddenProbabilities(SimpleMatrix inputVector) {
@@ -171,7 +172,18 @@ public class RbmSuggestedModule extends ReactContextBaseJavaModule {
 
 
     private SimpleMatrix hiddenStateToVisibleInputVariance(SimpleMatrix inputVector) {
-        SimpleMatrix matrixWeights2 = this.mMatrixWeights.copy().plus(this.mMatrixWeights); // same result as mapping every element x * x
+        SimpleMatrix matrixWeights2 = this.mMatrixWeights.copy();
+        DMatrixIterator matrixWeights2Iterator = matrixWeights2.iterator(
+                true,
+                0,
+                0,
+                matrixWeights2.numRows() - 1,
+                matrixWeights2.numCols() - 1
+        );
+        while (matrixWeights2Iterator.hasNext()) {
+            double x = matrixWeights2Iterator.next();
+            matrixWeights2Iterator.set(x * x);
+        }
         SimpleMatrix hiddenVariance = inputVector.copy();
         DMatrixIterator hiddenVarianceIterator = hiddenVariance.iterator(
                 true,
@@ -216,7 +228,7 @@ public class RbmSuggestedModule extends ReactContextBaseJavaModule {
         );
         while (temp2Iterator.hasNext()) {
             double x = temp2Iterator.next();
-            temp2Iterator.set(1 - x * 2);
+            temp2Iterator.set(1 - (x * 2));
         }
 
         SimpleMatrix varianceMultiplier = temp.elementMult(temp2);
@@ -248,15 +260,17 @@ public class RbmSuggestedModule extends ReactContextBaseJavaModule {
 
     private ArrayList<Integer> foodItemIdsReconstructFor(SimpleMatrix inputVector, Set<Integer> inputFoodItemIds) {
         SimpleMatrix inputVectorReconstruct = this.deterministicReconstruction(inputVector);
-        ArrayList<Double> inputVectorReconstructArray = this.matrixToArrayList(inputVectorReconstruct);
-        ArrayList<Double> probabilitiesIndexed = new ArrayList<>(inputVectorReconstructArray.subList(0, 425)); // FIXME: .sort();
+        ArrayList<Double> inputVectorReconstructArray = matrixToArrayList(inputVectorReconstruct);
+        ArrayList<Double> probabilitiesValues = new ArrayList<>(inputVectorReconstructArray.subList(0, 425));
+        ArrayList<Double> probabilitiesSorted = new ArrayList<>(probabilitiesValues);
+        Collections.sort(probabilitiesSorted);
+        Collections.reverse(probabilitiesSorted);
         ArrayList<Integer> suggestedFoodItemsIds = new ArrayList<>();
         int index = 0;
-        //        FIXME: incorrect results / implementation
-        while((suggestedFoodItemsIds.size() < 10) && (index < probabilitiesIndexed.size())) {
-            double doubleInd = probabilitiesIndexed.get(index);
-            int ind = (int) doubleInd;
-            int foodItemId = Constants.FOOD_IDS_FEATURES_ORDERED[ind];
+        while((suggestedFoodItemsIds.size() < 10) && (index < probabilitiesValues.size())) {
+            double doubleInd = probabilitiesSorted.get(index);
+            int columnId = probabilitiesValues.indexOf(doubleInd);
+            int foodItemId = Constants.FOOD_IDS_FEATURES_ORDERED[columnId];
 
             if (!inputFoodItemIds.contains(foodItemId)) {
                 suggestedFoodItemsIds.add(foodItemId);

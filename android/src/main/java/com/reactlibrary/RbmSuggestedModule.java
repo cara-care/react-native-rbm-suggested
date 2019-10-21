@@ -110,8 +110,7 @@ public class RbmSuggestedModule extends ReactContextBaseJavaModule {
         ArrayList<String> matrixValuesArrayList = new ArrayList<>();
 
         try {
-            // FIXME: getAssets() won't work?
-            bufferedReader = new BufferedReader(new InputStreamReader(getAssets().open(filename), "UTF-8"));
+            bufferedReader = new BufferedReader(new InputStreamReader(reactContext.getAssets().open(filename), "UTF-8"));
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 matrixValuesArrayList.add(line);

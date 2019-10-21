@@ -2,11 +2,13 @@ package com.reactlibrary;
 
 import android.util.Log;
 
+import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReadableArray;
+import com.facebook.react.bridge.WritableArray;
 
 import org.ejml.data.DMatrixIterator;
 import org.ejml.simple.SimpleMatrix;
@@ -44,25 +46,26 @@ public class RbmSuggestedModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void init(Promise promise) {
-        if (this.mRbmSuggested == null) {
-            this.initMatrix();
-            this.mRbmSuggested = this;
+        try {
+            if (this.mRbmSuggested == null) {
+                this.initMatrix();
+                this.mRbmSuggested = this;
+            }
+            promise.resolve(true);
+        } catch (Exception e) {
+            promise.reject(e);
         }
-
-        promise.resolve(true);
     }
 
 
     @ReactMethod
-    public void suggestedFoodItemFor(final ReadableArray foodItemsIds, Integer hour, String timezone, Promise promise) {
+    public void suggestedFoodItemFor(final ReadableArray foodItemsIds, final Integer hour, final String timezone, final Promise promise) {
         ArrayList<Integer> foodItemsIdsArrayList = new ArrayList<>();
-
-        // TODO: CREATE A UTIL FUNCTION TO convert ReadableArray to ArrayList ??
         for (int i = 0; i < foodItemsIds.size(); i++) {
             foodItemsIdsArrayList.add(foodItemsIds.getInt(i));
         }
 
-        // TODO: This is dumb, perhaps should refactor createInputVector to use ArrayList<Integer>
+        // FIXME: This is dumb, perhaps should refactor createInputVector to use ArrayList<Integer>
         int[] foodItemIds = new int[foodItemsIdsArrayList.size()];
 
         for (int i = 0; i < foodItemsIdsArrayList.size(); i++) {
@@ -70,7 +73,7 @@ public class RbmSuggestedModule extends ReactContextBaseJavaModule {
         }
 
         SimpleMatrix inputVector = this.createInputVector(foodItemIds, hour, timezone);
-        // FIXME: figure out which set to use / more efficient way of doing this
+        // TODO: figure out which set to use / more efficient way of doing this
         Set<Integer> setValues = new HashSet<Integer>() {};
         // foodItemIds
         for (int i = 0; i < foodItemIds.length; i++) {
@@ -82,12 +85,16 @@ public class RbmSuggestedModule extends ReactContextBaseJavaModule {
         }
 
         ArrayList<Integer> suggestedFoodItemsIdsArrayList = this.foodItemIdsReconstructFor(inputVector, setValues);
-        int[] suggestedFoodItemsIds = new int[suggestedFoodItemsIdsArrayList.size()];
-        for (int i = 0; i < suggestedFoodItemsIds.length; i++) {
-            suggestedFoodItemsIds[i] = suggestedFoodItemsIdsArrayList.get(i);
+        try {
+            WritableArray suggestedFoodItemsIds = Arguments.createArray();
+            for (int i = 0; i < suggestedFoodItemsIdsArrayList.size(); i++) {
+                int id = suggestedFoodItemsIdsArrayList.get(i);
+                suggestedFoodItemsIds.pushInt(id);
+            }
+            promise.resolve(suggestedFoodItemsIds);
+        } catch (Exception e) {
+            promise.reject(e);
         }
-
-        promise.resolve(suggestedFoodItemsIds);
     }
 
     private void initMatrix() {

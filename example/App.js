@@ -24,13 +24,16 @@ class App extends React.Component {
     this.setState({loading: false});
   };
 
-  getSuggestedFoodItems = async () => {
+  coffeeTest = async () => {
     const suggestedFoodItems = await RBM.suggestedFoodItemFor(
-      [],
-      new Date().getHours(),
+      [3097],
+      14,
+      // new Date().getHours(),
       'Europe/Berlin',
     );
     console.log(suggestedFoodItems);
+    console.log('expected =>');
+    console.log([3221, 3137, 3191, 37341, 3119, 3274, 3005, 3091, 3735, 37360]);
   };
 
   render() {
@@ -39,10 +42,7 @@ class App extends React.Component {
         {this.state.loading ? (
           <Text>Loading</Text>
         ) : (
-          <Button
-            title="getSuggestedFoodItems"
-            onPress={this.getSuggestedFoodItems}
-          />
+          <Button title="getSuggestedFoodItems" onPress={this.coffeeTest} />
         )}
       </View>
     );

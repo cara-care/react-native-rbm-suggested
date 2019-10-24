@@ -30,5 +30,6 @@
   "devDependencies": {
     "react": "^16.8.3",
     "react-native": "^0.59.10"
-  }
+  },
+  "postinstall": "git submodule update --init"
 }

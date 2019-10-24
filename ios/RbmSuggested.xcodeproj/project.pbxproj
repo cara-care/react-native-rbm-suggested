@@ -7,7 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B3E7B58A1CC2AC0600A0062D /* RbmSuggested.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RbmSuggested.m */; };
+		272B28B72361A094002CBCAC /* RBMSuggested.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272B28B62361A094002CBCAC /* RBMSuggested.swift */; };
+		272B28B92361A767002CBCAC /* RBMConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272B28B82361A767002CBCAC /* RBMConstants.swift */; };
+		272B28DC2361A97E002CBCAC /* Matrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 272B28CC2361A97D002CBCAC /* Matrix.m */; };
+		27BD159B2361CC5A00F7A408 /* Matrix+Manipulate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BD159A2361CC5A00F7A408 /* Matrix+Manipulate.m */; };
+		27BD15A22361CD8400F7A408 /* Matrix+Advanced.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BD15A12361CD8400F7A408 /* Matrix+Advanced.m */; };
+		27BD15A52361CD9A00F7A408 /* Matrix+Map.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BD15A42361CD9A00F7A408 /* Matrix+Map.m */; };
+		27BD15AD2361D08A00F7A408 /* HaltonInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BD15AC2361D08A00F7A408 /* HaltonInterface.m */; };
+		27BD15B32361D91400F7A408 /* RBMSuggested.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BD15B22361D91400F7A408 /* RBMSuggested.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,8 +31,25 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRbmSuggested.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRbmSuggested.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3E7B5881CC2AC0600A0062D /* RbmSuggested.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RbmSuggested.h; sourceTree = "<group>"; };
-		B3E7B5891CC2AC0600A0062D /* RbmSuggested.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RbmSuggested.m; sourceTree = "<group>"; };
+		272B28B52361A094002CBCAC /* RbmSuggested-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RbmSuggested-Bridging-Header.h"; sourceTree = "<group>"; };
+		272B28B62361A094002CBCAC /* RBMSuggested.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBMSuggested.swift; sourceTree = "<group>"; };
+		272B28B82361A767002CBCAC /* RBMConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBMConstants.swift; sourceTree = "<group>"; };
+		272B28BA2361A780002CBCAC /* intercept_visible_v5.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = intercept_visible_v5.txt; path = ../assets/intercept_visible_v5.txt; sourceTree = "<group>"; };
+		272B28BB2361A780002CBCAC /* intercept_hidden_v5.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = intercept_hidden_v5.txt; path = ../assets/intercept_hidden_v5.txt; sourceTree = "<group>"; };
+		272B28BC2361A780002CBCAC /* weights_v5.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = weights_v5.txt; path = ../assets/weights_v5.txt; sourceTree = "<group>"; };
+		272B28CC2361A97D002CBCAC /* Matrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Matrix.m; path = contrib/YCMatrix/YCMatrix/Matrix.m; sourceTree = SOURCE_ROOT; };
+		272B28CF2361A97D002CBCAC /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = contrib/YCMatrix/YCMatrix/Constants.h; sourceTree = SOURCE_ROOT; };
+		272B28D42361A97E002CBCAC /* Matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Matrix.h; path = contrib/YCMatrix/YCMatrix/Matrix.h; sourceTree = SOURCE_ROOT; };
+		27BD15952361C85400F7A408 /* react-native-rbm-suggested.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "react-native-rbm-suggested.podspec"; path = "../react-native-rbm-suggested.podspec"; sourceTree = "<group>"; };
+		27BD15992361CC5A00F7A408 /* Matrix+Manipulate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Matrix+Manipulate.h"; path = "contrib/YCMatrix/YCMatrix/Matrix+Manipulate.h"; sourceTree = SOURCE_ROOT; };
+		27BD159A2361CC5A00F7A408 /* Matrix+Manipulate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Matrix+Manipulate.m"; path = "contrib/YCMatrix/YCMatrix/Matrix+Manipulate.m"; sourceTree = SOURCE_ROOT; };
+		27BD15A02361CD8400F7A408 /* Matrix+Advanced.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Matrix+Advanced.h"; path = "contrib/YCMatrix/YCMatrix/Matrix+Advanced.h"; sourceTree = SOURCE_ROOT; };
+		27BD15A12361CD8400F7A408 /* Matrix+Advanced.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Matrix+Advanced.m"; path = "contrib/YCMatrix/YCMatrix/Matrix+Advanced.m"; sourceTree = SOURCE_ROOT; };
+		27BD15A32361CD9A00F7A408 /* Matrix+Map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Matrix+Map.h"; path = "contrib/YCMatrix/YCMatrix/Matrix+Map.h"; sourceTree = SOURCE_ROOT; };
+		27BD15A42361CD9A00F7A408 /* Matrix+Map.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Matrix+Map.m"; path = "contrib/YCMatrix/YCMatrix/Matrix+Map.m"; sourceTree = SOURCE_ROOT; };
+		27BD15AB2361D08A00F7A408 /* HaltonInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HaltonInterface.h; sourceTree = "<group>"; };
+		27BD15AC2361D08A00F7A408 /* HaltonInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HaltonInterface.m; sourceTree = "<group>"; };
+		27BD15B22361D91400F7A408 /* RBMSuggested.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RBMSuggested.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,12 +71,45 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		272B28C82361A935002CBCAC /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				272B28C92361A944002CBCAC /* YCMatrix */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		272B28C92361A944002CBCAC /* YCMatrix */ = {
+			isa = PBXGroup;
+			children = (
+				27BD15A32361CD9A00F7A408 /* Matrix+Map.h */,
+				27BD15A42361CD9A00F7A408 /* Matrix+Map.m */,
+				27BD15A02361CD8400F7A408 /* Matrix+Advanced.h */,
+				27BD15A12361CD8400F7A408 /* Matrix+Advanced.m */,
+				27BD15992361CC5A00F7A408 /* Matrix+Manipulate.h */,
+				27BD159A2361CC5A00F7A408 /* Matrix+Manipulate.m */,
+				272B28CF2361A97D002CBCAC /* Constants.h */,
+				272B28D42361A97E002CBCAC /* Matrix.h */,
+				272B28CC2361A97D002CBCAC /* Matrix.m */,
+			);
+			path = YCMatrix;
+			sourceTree = "<group>";
+		};
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				B3E7B5881CC2AC0600A0062D /* RbmSuggested.h */,
-				B3E7B5891CC2AC0600A0062D /* RbmSuggested.m */,
+				27BD15952361C85400F7A408 /* react-native-rbm-suggested.podspec */,
+				272B28C82361A935002CBCAC /* Dependencies */,
+				272B28BB2361A780002CBCAC /* intercept_hidden_v5.txt */,
+				272B28BA2361A780002CBCAC /* intercept_visible_v5.txt */,
+				272B28BC2361A780002CBCAC /* weights_v5.txt */,
+				272B28B82361A767002CBCAC /* RBMConstants.swift */,
+				272B28B62361A094002CBCAC /* RBMSuggested.swift */,
+				27BD15B22361D91400F7A408 /* RBMSuggested.m */,
+				27BD15AB2361D08A00F7A408 /* HaltonInterface.h */,
+				27BD15AC2361D08A00F7A408 /* HaltonInterface.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
+				272B28B52361A094002CBCAC /* RbmSuggested-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +144,7 @@
 				TargetAttributes = {
 					58B511DA1A9E6C8500147676 = {
 						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 1110;
 					};
 				};
 			};
@@ -95,6 +153,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 58B511D21A9E6C8500147676;
@@ -112,7 +171,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3E7B58A1CC2AC0600A0062D /* RbmSuggested.m in Sources */,
+				272B28B72361A094002CBCAC /* RBMSuggested.swift in Sources */,
+				272B28DC2361A97E002CBCAC /* Matrix.m in Sources */,
+				27BD15A22361CD8400F7A408 /* Matrix+Advanced.m in Sources */,
+				27BD15AD2361D08A00F7A408 /* HaltonInterface.m in Sources */,
+				27BD159B2361CC5A00F7A408 /* Matrix+Manipulate.m in Sources */,
+				27BD15B32361D91400F7A408 /* RBMSuggested.m in Sources */,
+				272B28B92361A767002CBCAC /* RBMConstants.swift in Sources */,
+				27BD15A52361CD9A00F7A408 /* Matrix+Map.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,32 +281,41 @@
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				HEADER_SEARCH_PATHS = (
-				"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/../../../React/**",
-					"$(SRCROOT)/../../react-native/React/**",
-				);
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = RbmSuggested;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		58B511F11A9E6C8500147676 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = RbmSuggested;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RbmSuggested-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		58B511F11A9E6C8500147676 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../../../React/**",
+					"$(SRCROOT)/../../react-native/React/**",
+				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = RbmSuggested;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RbmSuggested-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

@@ -1,5 +1,5 @@
 import { NativeModules } from 'react-native';
 
-const { RbmSuggested } = NativeModules;
+const { RBMSuggested } = NativeModules;
 
-export default RbmSuggested;
+export default RBMSuggested;

@@ -24,24 +24,24 @@ import java.util.Set;
 
 
 
-public class RbmSuggestedModule extends ReactContextBaseJavaModule {
+public class RBMSuggestedModule extends ReactContextBaseJavaModule {
 
     private final ReactApplicationContext reactContext;
-    private RbmSuggestedModule mRbmSuggested;
+    private RBMSuggestedModule mRbmSuggested;
     private SimpleMatrix mMatrixWeights;
     private SimpleMatrix mInterceptsHidden;
     private SimpleMatrix mInterceptsVisible;
     private final int[] alcoholIds = {3589, 3587, 2993};
 
 
-    public RbmSuggestedModule(ReactApplicationContext reactContext) {
+    public RBMSuggestedModule(ReactApplicationContext reactContext) {
         super(reactContext);
         this.reactContext = reactContext;
     }
 
     @Override
     public String getName() {
-        return "RbmSuggested";
+        return "RBMSuggested";
     }
 
     @ReactMethod

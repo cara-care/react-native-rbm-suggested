@@ -1,26 +1,27 @@
 {
   "name": "react-native-rbm-suggested",
-  "title": "React Native Rbm Suggested",
+  "title": "React Native RBM Suggested",
   "version": "1.0.0",
-  "description": "TODO",
+  "description": "React Native RBM Suggested",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "git clone https://github.com/yconst/YCMatrix.git ios/contrib/YCMatrix"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/github_account/react-native-rbm-suggested.git",
-    "baseUrl": "https://github.com/github_account/react-native-rbm-suggested"
+    "url": "git+https://github.com/cara-care/react-native-rbm-suggested.git",
+    "baseUrl": "https://github.com/cara-care/react-native-rbm-suggested"
   },
   "keywords": [
     "react-native"
   ],
   "author": {
-    "name": "Your Name",
-    "email": "yourname@email.com"
+    "name": "Jan Cziżikow",
+    "email": "jan@cara.care"
   },
-  "license": "MIT",
+  "private": true,
   "licenseFilename": "LICENSE",
   "readmeFilename": "README.md",
   "peerDependencies": {

@@ -21,6 +21,12 @@
     "name": "Jan Cziżikow",
     "email": "jan@cara.care"
   },
+  "contributors": [
+    {
+      "name": "Mike Gerasymenko",
+      "email": "mike@cara.care"
+    }
+  ],
   "private": true,
   "licenseFilename": "LICENSE",
   "readmeFilename": "README.md",

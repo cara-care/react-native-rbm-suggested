@@ -1,0 +1,18 @@
+PODS:
+  - React (0.11.0):
+    - React/Core (= 0.11.0)
+  - React/Core (0.11.0)
+
+DEPENDENCIES:
+  - React
+
+SPEC REPOS:
+  trunk:
+    - React
+
+SPEC CHECKSUMS:
+  React: ab1a2e21deb34965c38328d5ec40cc7d12c6050a
+
+PODFILE CHECKSUM: b9ee6a2a90e16e09f2f78000bc423263d5b3cb7d
+
+COCOAPODS: 1.8.0

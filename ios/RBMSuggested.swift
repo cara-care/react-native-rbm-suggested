@@ -106,8 +106,7 @@ import UIKit
         return probabilities_final!
     }
     
-    func createInputVector(foodItemIds: [Int], timezone: String, date: Date) -> Matrix {
-        let calendar = Calendar.current
+    func createInputVector(foodItemIds: [Int], timezone: String, hour: Int) -> Matrix {
         var values = [Double](repeating: 0, count: 459)
         for foodItemId in foodItemIds {
             if let index = RBMConstants.foodIdsFeaturesOrdered.firstIndex(of: foodItemId) {
@@ -115,7 +114,7 @@ import UIKit
             }
         }
         let foodOffset = 425
-        values[foodOffset + calendar.component(.hour, from: date)] = 1
+        values[foodOffset + hour] = 1
         if let index = RBMConstants.timeZonesFeaturesOrdered[timezone] {
             values[index] = 1
         }
@@ -171,17 +170,17 @@ import UIKit
     }
     
     @objc func suggestedFoodItemFor(_ foodItemIds: [NSNumber]
-        , date: Date
+        , hour: Int
         , timezone: String
         , resolve: RCTPromiseResolveBlock
         , rejecter reject: RCTPromiseRejectBlock) {
         
         let inputVector = RBMSuggested.getInstance().createInputVector(foodItemIds: foodItemIds as! [Int]
             , timezone: timezone
-            , date: date)
+            , hour: hour)
         let setValues: [Int] = foodItemIds as! [Int] + RBMSuggested.alcoholIds
         resolve(RBMSuggested.getInstance().foodItemIdsReconstructFor(inputVector: inputVector
-        , inputFoodItemIds: Set(setValues)) as! [NSNumber])
+        , inputFoodItemIds: Set(setValues)) as [NSNumber])
     }
     
 }

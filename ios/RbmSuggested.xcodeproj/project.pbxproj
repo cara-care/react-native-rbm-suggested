@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2530600A03258B1D1886A734 /* libPods-RbmSuggested.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ACE9218A21F4BD64DA5251A /* libPods-RbmSuggested.a */; };
 		272B28B72361A094002CBCAC /* RBMSuggested.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272B28B62361A094002CBCAC /* RBMSuggested.swift */; };
 		272B28B92361A767002CBCAC /* RBMConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272B28B82361A767002CBCAC /* RBMConstants.swift */; };
 		272B28DC2361A97E002CBCAC /* Matrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 272B28CC2361A97D002CBCAC /* Matrix.m */; };
@@ -30,13 +31,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0D8A57B8BE0D9E8DBB7B7B01 /* Pods-RbmSuggested.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RbmSuggested.release.xcconfig"; path = "Target Support Files/Pods-RbmSuggested/Pods-RbmSuggested.release.xcconfig"; sourceTree = "<group>"; };
 		134814201AA4EA6300B7C361 /* libRbmSuggested.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRbmSuggested.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1ACE9218A21F4BD64DA5251A /* libPods-RbmSuggested.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RbmSuggested.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		272B28B52361A094002CBCAC /* RbmSuggested-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RbmSuggested-Bridging-Header.h"; sourceTree = "<group>"; };
 		272B28B62361A094002CBCAC /* RBMSuggested.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBMSuggested.swift; sourceTree = "<group>"; };
 		272B28B82361A767002CBCAC /* RBMConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBMConstants.swift; sourceTree = "<group>"; };
-		272B28BA2361A780002CBCAC /* intercept_visible_v5.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = intercept_visible_v5.txt; path = ../assets/intercept_visible_v5.txt; sourceTree = "<group>"; };
-		272B28BB2361A780002CBCAC /* intercept_hidden_v5.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = intercept_hidden_v5.txt; path = ../assets/intercept_hidden_v5.txt; sourceTree = "<group>"; };
-		272B28BC2361A780002CBCAC /* weights_v5.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = weights_v5.txt; path = ../assets/weights_v5.txt; sourceTree = "<group>"; };
 		272B28CC2361A97D002CBCAC /* Matrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Matrix.m; path = contrib/YCMatrix/YCMatrix/Matrix.m; sourceTree = SOURCE_ROOT; };
 		272B28CF2361A97D002CBCAC /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = contrib/YCMatrix/YCMatrix/Constants.h; sourceTree = SOURCE_ROOT; };
 		272B28D42361A97E002CBCAC /* Matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Matrix.h; path = contrib/YCMatrix/YCMatrix/Matrix.h; sourceTree = SOURCE_ROOT; };
@@ -50,6 +50,10 @@
 		27BD15AB2361D08A00F7A408 /* HaltonInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HaltonInterface.h; sourceTree = "<group>"; };
 		27BD15AC2361D08A00F7A408 /* HaltonInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HaltonInterface.m; sourceTree = "<group>"; };
 		27BD15B22361D91400F7A408 /* RBMSuggested.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RBMSuggested.m; sourceTree = "<group>"; };
+		27D398DE2362F606005CE0C1 /* intercept_hidden_v5.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = intercept_hidden_v5.txt; path = ../android/src/main/assets/intercept_hidden_v5.txt; sourceTree = "<group>"; };
+		27D398DF2362F606005CE0C1 /* intercept_visible_v5.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = intercept_visible_v5.txt; path = ../android/src/main/assets/intercept_visible_v5.txt; sourceTree = "<group>"; };
+		27D398E02362F606005CE0C1 /* weights_v5.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = weights_v5.txt; path = ../android/src/main/assets/weights_v5.txt; sourceTree = "<group>"; };
+		B38B64F44B37C377AB34E850 /* Pods-RbmSuggested.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RbmSuggested.debug.xcconfig"; path = "Target Support Files/Pods-RbmSuggested/Pods-RbmSuggested.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2530600A03258B1D1886A734 /* libPods-RbmSuggested.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +74,15 @@
 				134814201AA4EA6300B7C361 /* libRbmSuggested.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		1F66DD64388126CC4374EC97 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B38B64F44B37C377AB34E850 /* Pods-RbmSuggested.debug.xcconfig */,
+				0D8A57B8BE0D9E8DBB7B7B01 /* Pods-RbmSuggested.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		272B28C82361A935002CBCAC /* Dependencies */ = {
@@ -100,17 +114,27 @@
 			children = (
 				27BD15952361C85400F7A408 /* react-native-rbm-suggested.podspec */,
 				272B28C82361A935002CBCAC /* Dependencies */,
-				272B28BB2361A780002CBCAC /* intercept_hidden_v5.txt */,
-				272B28BA2361A780002CBCAC /* intercept_visible_v5.txt */,
-				272B28BC2361A780002CBCAC /* weights_v5.txt */,
 				272B28B82361A767002CBCAC /* RBMConstants.swift */,
 				272B28B62361A094002CBCAC /* RBMSuggested.swift */,
 				27BD15B22361D91400F7A408 /* RBMSuggested.m */,
 				27BD15AB2361D08A00F7A408 /* HaltonInterface.h */,
 				27BD15AC2361D08A00F7A408 /* HaltonInterface.m */,
+				27D398DE2362F606005CE0C1 /* intercept_hidden_v5.txt */,
+				27D398DF2362F606005CE0C1 /* intercept_visible_v5.txt */,
+				27D398E02362F606005CE0C1 /* weights_v5.txt */,
 				134814211AA4EA7D00B7C361 /* Products */,
 				272B28B52361A094002CBCAC /* RbmSuggested-Bridging-Header.h */,
+				1F66DD64388126CC4374EC97 /* Pods */,
+				6CDF939F7BFE39571B7C6916 /* Frameworks */,
 			);
+			sourceTree = "<group>";
+		};
+		6CDF939F7BFE39571B7C6916 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1ACE9218A21F4BD64DA5251A /* libPods-RbmSuggested.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,6 +144,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RbmSuggested" */;
 			buildPhases = (
+				4423D34C7C91D135F0E84935 /* [CP] Check Pods Manifest.lock */,
 				58B511D71A9E6C8500147676 /* Sources */,
 				58B511D81A9E6C8500147676 /* Frameworks */,
 				58B511D91A9E6C8500147676 /* CopyFiles */,
@@ -165,6 +190,31 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4423D34C7C91D135F0E84935 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RbmSuggested-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		58B511D71A9E6C8500147676 /* Sources */ = {
@@ -280,6 +330,7 @@
 		};
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B38B64F44B37C377AB34E850 /* Pods-RbmSuggested.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = (
@@ -287,6 +338,10 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
+					"$(SRCROOT)/Pods/Headers/Public/**",
+					"$(SRCROOT)/Pods/Headers/Public/React/**",
+					"$(SRCROOT)/Pods/Headers/Public/React/React/**",
+					"$(SRCROOT)/Pods/Headers/Public/React/React/Base/**",
 				);
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
@@ -301,6 +356,7 @@
 		};
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D8A57B8BE0D9E8DBB7B7B01 /* Pods-RbmSuggested.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = (
@@ -308,6 +364,10 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
+					"$(SRCROOT)/Pods/Headers/Public/**",
+					"$(SRCROOT)/Pods/Headers/Public/React/**",
+					"$(SRCROOT)/Pods/Headers/Public/React/React/**",
+					"$(SRCROOT)/Pods/Headers/Public/React/React/Base/**",
 				);
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";

@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/cara-care/react-native-rbm-suggested.git", :tag => "#{s.version}" }
 
   s.source_files = "ios/RbmSuggested-Bridging-Header.h", "ios/RBMConstants.swift", "ios/RBMSuggested.swift", "ios/RBMSuggested.m", "ios/contrib/YCMatrix/YCMatrix/Matrix.{h,m}", "ios/contrib/YCMatrix/YCMatrix/Matrix+Advanced.{h,m}", "ios/contrib/YCMatrix/YCMatrix/Matrix+Map.{h,m}", "ios/contrib/YCMatrix/YCMatrix/Matrix+Manipulate.{h,m}", "ios/contrib/YCMatrix/YCMatrix/Constants.h", "ios/HaltonInterface.{h,m}"
-  s.resources = "assets/*"
+  s.resources = "android/src/main/assets/*"
   s.requires_arc = true
 
   s.dependency "React"

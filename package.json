@@ -2,7 +2,7 @@
   "name": "react-native-rbm-suggested",
   "title": "React Native RBM Suggested",
   "version": "1.0.0",
-  "description": "",
+  "description": "React Native RBM Suggested",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
@@ -21,7 +21,7 @@
     "name": "Jan Cziżikow",
     "email": "jan@cara.care"
   },
-  "license": "Copyright (c) Cara by HiDoc Technologies GmbH",
+  "private": true,
   "licenseFilename": "LICENSE",
   "readmeFilename": "README.md",
   "peerDependencies": {

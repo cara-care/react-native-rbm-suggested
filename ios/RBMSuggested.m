@@ -1,4 +1,4 @@
-#import "React/RCTBridgeModule.h"
+#import "RCTBridgeModule.h"
 
 @interface RCT_EXTERN_MODULE(RBMSuggested, NSObject)
 
@@ -9,7 +9,7 @@ RCT_EXTERN_METHOD(
 
 RCT_EXTERN_METHOD(
   suggestedFoodItemFor: (NSArray<NSNumber *> *)items
-  date: (NSDate *)date
+  hour: (int)hour
   timezone:(NSString *)string
   resolve: (RCTPromiseResolveBlock)resolve
   rejecter: (RCTPromiseRejectBlock)reject

@@ -1,18 +1,12 @@
-//
-//  HaltonInterface.m
-//  YCMatrix
-//
-//  Created by Ioannis Chatzikonstantinou on 21/12/15.
-//  Copyright © 2015 Ioannis Chatzikonstantinou. All rights reserved.
-//
-
 #import "HaltonInterface.h"
 
+// NB: Mock to make the project compile.
 @implementation HaltonInterface
 
 + (Matrix *)sampleWithDimension:(int)dimension count:(int)count
 {
-    return nil;
+    NSAssert(false, @"+[HaltonInterface sampleWithDimension:count:] is not implemented");
+    exit(0);
 }
 
 @end

@@ -1,8 +1,8 @@
 {
   "name": "react-native-rbm-suggested",
-  "title": "React Native Rbm Suggested",
+  "title": "React Native RBM Suggested",
   "version": "1.0.0",
-  "description": "TODO",
+  "description": "",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
@@ -11,17 +11,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/github_account/react-native-rbm-suggested.git",
-    "baseUrl": "https://github.com/github_account/react-native-rbm-suggested"
+    "url": "git+https://github.com/cara-care/react-native-rbm-suggested.git",
+    "baseUrl": "https://github.com/cara-care/react-native-rbm-suggested"
   },
   "keywords": [
     "react-native"
   ],
   "author": {
-    "name": "Your Name",
-    "email": "yourname@email.com"
+    "name": "Jan Cziżikow",
+    "email": "jan@cara.care"
   },
-  "license": "MIT",
+  "license": "Copyright (c) Cara by HiDoc Technologies GmbH",
   "licenseFilename": "LICENSE",
   "readmeFilename": "README.md",
   "peerDependencies": {

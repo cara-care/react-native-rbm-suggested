@@ -1,13 +1,17 @@
 {
-  "name": "react-native-rbm-suggested",
+  "name": "@cara-care/react-native-rbm-suggested",
+  "version": "1.0.1",
   "title": "React Native RBM Suggested",
-  "version": "1.0.0",
   "description": "React Native RBM Suggested",
   "main": "index.js",
   "types": "index.d.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "git clone https://github.com/yconst/YCMatrix.git ios/contrib/YCMatrix"
+    "clean": "rimraf ios/contrib/YCMatrix && mkdir ios/contrib/YCMatrix",
+    "clone": "git clone https://github.com/yconst/YCMatrix.git ios/contrib/YCMatrix",
+    "prepublishOnly": "npm run clean && npm run clone"
   },
   "repository": {
     "type": "git",
@@ -27,7 +31,7 @@
       "email": "mike@cara.care"
     }
   ],
-  "private": true,
+  "private": false,
   "licenseFilename": "LICENSE",
   "readmeFilename": "README.md",
   "peerDependencies": {
@@ -36,6 +40,7 @@
   },
   "devDependencies": {
     "react": "^16.8.3",
-    "react-native": "^0.59.10"
+    "react-native": "^0.59.10",
+    "rimraf": "^3.0.0"
   }
 }

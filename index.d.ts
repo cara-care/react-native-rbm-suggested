@@ -1,5 +1,5 @@
-declare module "react-native-rbm-suggested" {
-  interface RBMSuggested {
+declare module "@cara-care/react-native-rbm-suggested" {
+  export interface IRBMSuggested {
     init: () => Promise<void>;
     suggestedFoodItemFor: (
       selectedFoodItemsIds: number[],
@@ -7,6 +7,6 @@ declare module "react-native-rbm-suggested" {
       timezone: string
     ) => Promise<number[]>;
   }
-  const RBMSuggested: RBMSuggested;
+  const RBMSuggested: IRBMSuggested;
   export default RBMSuggested;
 }

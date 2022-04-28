@@ -41,3 +41,8 @@ import RbmSuggested from 'react-native-rbm-suggested';
 // TODO: What to do with the module?
 RbmSuggested;
 ```
+---
+
+#### `init()`;
+Do not forget to call `RBMSuggested.init();` in the initial load.
+
